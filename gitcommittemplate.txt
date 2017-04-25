@@ -1,0 +1,9 @@
+
+# DID YOU REMEBER?
+# * TW-XXX
+# * No ending dot
+# * Subject should contain WHY
+# * Empty line between subject and body
+# * Body is optional, should explain how, dependencies, resources and quirks.
+# * English
+#

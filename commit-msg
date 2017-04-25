@@ -1,0 +1,31 @@
+#!/bin/sh
+
+echo "Committing!"
+
+local_editor=`git config --get core.editor`
+
+if [ -z "${local_editor}" ]
+then
+  local_editor=${EDITOR}
+fi
+
+if [ -z "$(grep ':.*[a-zA-Z]' $1)" ]
+then
+  # Allows us to read user input below, assigns stdin to keyboard
+  exec < /dev/tty
+
+  while true; do
+    read -p "[commit-msg hook] Did you remember the issue number 'TW-xxx'? (Y/n) " yn
+    if [ "$yn" = "" ]; then
+      yn='Y'
+    fi
+    case $yn in
+        [Yy] )  exit;;
+        [Nn] )  ${local_editor} $1
+                exit;;
+        * ) echo "Please answer y or n for yes or no.";;
+    esac
+  done
+
+  exec <&-
+fi
