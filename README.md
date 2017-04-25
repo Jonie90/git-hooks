@@ -1,6 +1,3 @@
-# git-hooks
-Convenient git hooks
-
 #Commit Script
 When I write commit messages I typically forget to state the issue number and this totally sucks. When omitting the issue number my commits won't be related to the issue in Jira and it will be difficult to do code reviews of my code and also to go back to old code and do changes, as well as see the work progress or status of a current issue.
 To solve this problem I wanted to write a script which, after every commit, asks me if I remebered to state the issue number. If I press no, the commit message should open in my standard editor and I would get a chance to update it. If I press yes, the commit is completed.
@@ -103,4 +100,3 @@ At first I tried to make the script stop running and committing the commit (ie e
 
 ##Further Development
 Expand the if statement and make it check if the commit message starts with "TW", if not, ask it it should, otherwise just commit directly.
-
