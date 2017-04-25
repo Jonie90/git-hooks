@@ -1,4 +1,4 @@
-#Commit Script
+# Commit Script
 When I write commit messages I typically forget to state the issue number and this totally sucks. When omitting the issue number my commits won't be related to the issue in Jira and it will be difficult to do code reviews of my code and also to go back to old code and do changes, as well as see the work progress or status of a current issue.
 To solve this problem I wanted to write a script which, after every commit, asks me if I remebered to state the issue number. If I press no, the commit message should open in my standard editor and I would get a chance to update it. If I press yes, the commit is completed.
 
@@ -11,7 +11,7 @@ I got a lot of help from here:
   * https://www.atlassian.com/git/tutorials/git-hooks/local-hooks
   * http://stackoverflow.com/questions/3417896/how-do-i-prompt-the-user-from-within-a-commit-msg-hook
 
-##git_templates
+## git_templates
 In order to get my customized hooks in all my repositories I created a git_templates folder and changed the template directory to the adress of my template folder. I found out how to do that from this page:
 
   https://coderwall.com/p/wp4xdg/global-git-templates-yes-that-means-hooks
@@ -98,5 +98,5 @@ It took a while before I realised that in order to commit directly after making 
 At first I tried to make the script stop running and committing the commit (ie exiting with value 0) by having a variable called first_commit or something similar and setting it initally to true and then to false or empty string when "n" was pressed and then check if this variable was true or not before prompting the user.
 
 
-##Further Development
-Expand the if statement and make it check if the commit message starts with "TW", if not, ask it it should, otherwise just commit directly.
+## Further Development
+Expand the if statement and make it check if the commit message starts with "TW", if not, ask if it should, otherwise just commit directly.
